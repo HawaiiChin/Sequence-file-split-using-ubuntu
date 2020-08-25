@@ -1,0 +1,23 @@
+a) Using head and tail
+to split into two parts at selected line number
+
+head -n 1000  large_file.txt > part1.txt # get top 1000 lines
+tail -n +1001 large_file.txt > part2.txt # get all lines starting from lines 1001 to end of file
+
+b) Using csplit
+to split into two parts at selected line number (new first line of second part)
+csplit -sf part. large_file.txt 1001
+  part.00 # contains lines 1..1000
+  part.01 # contains lines 1001...end
+c) Using split
+to split a large file into several parts of a maximal file size
+
+split <size> <filename>  <prefix>
+split -b50m large_file.txt part # split into 50MB parts
+https://en.wikipedia.org/wiki/Split_(Unix)
+
+d) Split fasta lines, using pyfasta
+split large fasta file into several part of same sequence number
+
+# split large uniref100.fasta file into 8 parts
+pyfasta split -n 8 uniref100.fasta
