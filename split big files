@@ -1,3 +1,9 @@
+* transit from base to root
+sudo passwd
+*change passwd then
+sudo root
+*put in password
+
 a) Using head and tail
 to split into two parts at selected line number
 
