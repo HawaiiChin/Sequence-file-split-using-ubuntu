@@ -1,1 +1,5 @@
+#shebang line in sh.
 
+#! /path
+
+./file.sh
